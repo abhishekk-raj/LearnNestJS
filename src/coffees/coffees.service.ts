@@ -9,7 +9,7 @@ import { Flavor } from './entities/flavor.entity';
 import { Event } from '../events/entities/event.entity';
 import { COFFEE_BRANDS } from './coffees.constants';
 
-@Injectable({ scope: Scope.DEFAULT })
+@Injectable({ scope: Scope.TRANSIENT })
 export class CoffeesService {
     constructor(
         @InjectRepository(Coffee)
@@ -19,7 +19,7 @@ export class CoffeesService {
         private readonly connection: Connection,
         @Inject(COFFEE_BRANDS) coffeeBrands: string[]
     ) {
-        console.log(coffeeBrands);
+        console.log('Coffee service instiantiated');
     }
 
     findAll(paginationQuery: PaginationQueryDto) {
