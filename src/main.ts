@@ -14,7 +14,6 @@ async function bootstrap() {
       enableImplicitConversion: true
     }
   }));
-  app.useGlobalGuards(new ApiKeyGuard());
   await app.listen(3000);
 }
 bootstrap();
